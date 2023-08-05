@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+
+#board{
+    position:relative;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+#myBtn{
+    display: none;
+    bottom: 1.5em;
+    right: 30px;
+    font-size: 3em;
+    background-color: black;
+    color: white;
+}
+  
+#myBtn:hover{
+    color: rgb(207, 207, 207);
+}
+
+.socialIcons a:hover{
+    opacity: 1;
+    background-color: black;
+    transition: 0.5s;
+}
+
+main h2{
+    font-size: 3vw;
+}
+main{
+    font-size: 1vw;
+}

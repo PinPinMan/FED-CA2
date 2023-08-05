@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the Earth | Opinion</title>
+  <link rel="stylesheet" href="../CSS/main.reset.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/main.layout.css">
+  <link rel="stylesheet" href="../CSS/opinion.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script defer src="../JS/main.js"></script>
+  </head>
+<body>
+  <!-- ========= UpBtn ======== -->
+  <button onclick="topFunction()" class="position-fixed z-3 border-0" id="myBtn" title="Go to top"><i class='fas'>&#xf35b;</i></button>
+  <!-- ========= UpBtn ======== -->
+
+
+  <!-- ========= NavBar ======== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bolder" style="font-size:3vw;" href="../index.html"><img src="../GRAPHICS/pfp.jpg" alt="Logo" style="width:5vw;" class="rounded-pill m-3">PinPin's CA2 Project</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbar2Label"><img src="../GRAPHICS/pfp.jpg" alt="Logo" style="width: 40px;" class="rounded-pill"></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item px-2 fw-bolder">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item px-2 fw-bolder">
+              <a class="nav-link active" aria-current="page" href="#">Opinion</a>
+            </li>
+            <li class="nav-item px-2 fw-bolder">
+                <a class="nav-link" href="sp.html">SP</a>
+            </li>
+            <li class="nav-item px-2 fw-bolder">
+              <a class="nav-link" href="game.html">Game</a>
+            </li>
+            <li class="nav-item px-2 ">
+              <a onclick="wrapperAddPopup()" class="btn btn-outline-light fw-bolder" id="btnFeedback-popup">Feedback</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- ========= NavBar ======== -->
+
+
+  <!-- ========= FeedBack ======== -->
+  <div class="wrapper text-white position-fixed bg-transparent d-flex align-items-center justify-content-center z-3 overflow-hidden">
+    <!-- close icon -->
+    <span onclick="wrapperRemovePopup()" id="icon-close" class="position-absolute top-0 bg-dark text-white d-flex align-items-center justify-content-center z-1">
+      <ion-icon name="close"></ion-icon>
+    </span>
+  <!-- login -->
+    <div class="w-100 form-box login">
+      <h2 class="text-center text-dark">Login</h2>
+      <form action="#">
+        <div class="input-box w-100">
+          <span class="icon position-absolute text-dark"><ion-icon name="mail"></ion-icon></span>
+          <input class="w-100 bg-transparent fw-bolder text-dark border-0" type="email" required>
+          <label class="fw-bolder text-dark">Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon position-absolute text-dark"><ion-icon name="person"></ion-icon></span>
+          <input class="w-100 bg-transparent fw-bolder text-dark border-0" type="tel" pattern="[0-9]{8}" required>
+          <label class="fw-bolder text-dark">Mobile number</label>
+        </div>
+        <div class="input-box">
+          <span class="icon position-absolute text-dark"><ion-icon name="lock-closed"></ion-icon></span>
+          <input class="w-100 bg-transparent fw-bolder text-dark border-0" type="password" required>
+          <label class="fw-bolder text-dark">Password</label>
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Login</button>
+        <div class="pledge text-center text-dark fw-bold">
+          <p>
+            Do you want to <a href="#" class="return text-center text-dark fw-bolder">make a pledge</a>
+          </p>
+        </div>
+      </form>
+    </div>
+    <!-- login -->
+
+    <!-- pledging -->
+    <div class="w-100 form-box pledging">
+      <h2 class="text-center text-dark">Pledge</h2>
+      <!-- Q1 -->
+      <form>
+        <label class="text-dark fw-bolder pb-2">1.Are you pledging as:</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios">
+          <label class="form-check-label text-dark">
+            An indivvidual
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios">
+          <label class="form-check-label text-dark">
+            An educational institution
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios">
+          <label class="form-check-label text-dark">
+            A corporate entity / organisation
+          </label>
+        </div>
+      </form>
+      <!-- Q1 -->
+
+      <!-- Q2 -->
+      <form>
+        <label class="text-dark pt-3 pb-2 fw-bolder">2.How did you find out about the Green Nation Pledge?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios">
+          <label class="form-check-label text-dark">
+            Form social media (Facebook, Instagram, Tiktok, LinkedIn etc)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios">
+          <label class="form-check-label text-dark">
+            From online advertisement
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios">
+          <label class="form-check-label text-dark">
+            From ads on lift lobby digital noticeboards
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios">
+          <label class="form-check-label text-dark">
+            At an event that featured Green Nation Pledge
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios">
+          <label class="form-check-label text-dark">
+            Others
+          </label>
+          <textarea class="form-control bg-transparent text-white" rows="1"></textarea>
+        </div>
+      </form>
+      <!-- Q2 -->
+
+      <button onclick="wrapperRemovePopup()" class="btn btn-success w-100 mt-2" type="submit">Make a Pledge</button>
+      <div class="pledge text-center text-dark fw-bold">
+        <p>
+          <a href="#" class="makePledge text-center text-light fw-bolder">Return</a>
+        </p>
+      </div>
+    </div>
+    <!-- pledging -->
+  </div>
+  <!-- ========= FeedBack ======== -->
+
+
+  <!-- ========= intro-Text ======== -->
+  <section class="position-relative d-flex justify-content-center align-items-center">
+    <h1 class="text-white position-absolute" id="centerText">Welcome</h1>
+    <img class="w-100" src="../GRAPHICS/background_img/background2.jpg" alt="background image">
+    <h2 class="position-absolute text-white" id="quote">It's not a bug, it's an undocumented feature.</h2>
+    <h2 class="position-absolute text-white" id="person">-pinpin</h2>
+  </section>
+  <!-- ========= intro-Text ======== -->
+
+
+  <!-- ========= Carousel ======== -->
+  <main id="carouselExampleIndicators" class="carousel carousel-light slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4" class=""></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <!-- ========= Introduction ======== -->
+      <div class="carousel-item active">
+        <div class="card mb-5" id="intro">
+          <div class="container-fluid">
+            <h1 class="d-flex justify-content-center text-white fw-bolder mt-5">Living on Earth</h1>
+            <hr class="line w-100">
+          </div>
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-10 col-md-8 col-lg-5">
+              <h1 class="text-white">Why protect the earth</h1>     <!-- Sources - https://www.panamunaproject.com.au/blogs/news/10-reasons-we-should-take-care-of-our-earth -->
+              <p class="text-white h5 fw-normal pt-2"> 
+                &emsp;The earth is home to millions of species of plants and animals, each playing a unque part in our earth's ecosystem. 
+                The extinction of a species will affect us without a shadow of doubt.
+                We need to preserve biodiversity, such as the health and the balance of our earth's ecosystems.
+              </p>
+              <p class="text-white h5 fw-normal pt-2">
+                &emsp;The earth's climate is affected by complex interactions between the atmosphere, oceans, and land. 
+                Human activities, such as burning fossil fuels and deforestation, have led to an influx of greenhouse gas emissions, resulting in global warming. 
+                Reducing these emissions and mitigating the effects of climate change will protect earth.
+              </p>
+              <p class="text-white h5 fw-normal pt-2">
+                &emsp;The earth provides us with natural resources such as water, air, and soil, which are essential for our survival. 
+                To ensure sustainable use of the resources means that future generations can also benefit from them.
+              </p>
+              <p class="text-white h5 fw-normal pt-2">
+                &emsp;Protecting it can also have economic benefits, such as increasing job opportunity in the renewable energy sector and the development of sustainable tourism.
+              </p>
+            </div>
+        
+            <div class="col-10 col-md-8 col-lg-5">
+              <div class="row d-flex justify-content-center">
+                <div class="m-2 col-10 col-md-7 col-lg-5"><img class="img-thumbnail w-100" src="../GRAPHICS/opinion/intro/lion-eating.jpg" alt="Lion eating"></div>                <!-- Images - https://www.deviantart.com/elbakan/art/lion-eat-burger-874869815 -->
+                <div class="m-2 col-10 col-md-7 col-lg-5"><img class="img-thumbnail w-100" src="../GRAPHICS/opinion/intro/global-warming.jpg" alt="Global Warming"></div>          <!-- Images - https://www.beritatrans.com/artikel/202646/Sekjen-PBB-Kondisi-Planet-Bumi-Rusak-Gagal-Total-Perangi-Pemanasan-Global/ -->
+              </div>
+              <div class="row d-flex justify-content-center">
+                <div class="m-2 col-10 col-md-7 col-lg-5"><img class="img-thumbnail w-100"  src="../GRAPHICS/opinion/intro/natural-resources.jpg" alt="Natural Resources"></div>   <!-- Images - https://www.financialexpress.com/economy/sustainable-development-with-a-fully-circular-economy-as-the-new-paradigm/2983636/ -->
+                <div class="m-2 col-10 col-md-7 col-lg-5"><img class="img-thumbnail w-100" src="../GRAPHICS/opinion/intro/sustainble-tourism.jpg" alt="sustainable tourism"></div> <!-- Images - https://www.internationalairportreview.com/article/174983/placing-sustainability-at-the-core-of-future-airport-growth/ -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========= Introduction ======== -->
+
+
+      <!-- ========= Measures ======== -->
+      <div class="carousel-item">
+        <div class="card mb-5">
+          <div class="container-fluid">
+            <h1 class="d-flex justify-content-center text-white fw-bolder mt-5">Measures taken now</h1>
+            <hr class="line w-100">
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-10 col-lg-5">
+              <div class="card-header text-center">
+                <h1 class="text-white">#TEAMSEAS</h1>               <!-- Sources - https://en.wikipedia.org/wiki/Team_Seas -->
+                <img class="w-50 mb-4" src="../GRAPHICS/opinion/teams/teamseas.jpg" alt="teamseaslogo">
+                <p class="text-white h5 fw-normal text"> 
+                  Team Seas, stylized as <b>#TEAMSEAS</b>, is an international collaborative fundraiser that was started by YouTubers <a class="text-decoration-none fw-bold" href="https://www.youtube.com/@MrBeast" target="_blank">MrBeast</a> and <a class="text-decoration-none fw-bold" href="https://www.youtube.com/@MarkRober" target="_blank">Mark Rober</a> as a follow up to Team Trees. 
+                  The fundraiser succeeded in raising <b>over 33 million</b> U.S. dollars. 
+                  All of the donations from the fundraiser go to the <a class="text-decoration-none fw-bold" href="https://oceanconservancy.org" target="_blank">Ocean Conservancy</a> and the <a class="text-decoration-none fw-bold" href="https://theoceancleanup.com" target="_blank">Ocean Cleanup</a>, with the organisations splitting the donations. 
+                  The fundraiser pledges to remove 30,000,000 pounds <b>(14,000,000 kg)</b> of marine debris from the ocean by removing 1 pound <b>(0.45 kg)</b> of marine debris from the ocean for every 1 dollar donated. 
+                  As of 30 April 2023, <b>$33,333,279</b> has been raised.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-10 col-lg-5">
+              <div class="card-header text-center">
+                <h1 class="text-white">#TEAMTREES</h1>              <!-- Sources - https://en.wikipedia.org/wiki/Team_Trees -->
+                <img class="w-100 mb-5" src="../GRAPHICS/opinion/teams/teamtrees.jpg" alt="teamtreeslogo">
+                <p class="text-white mt-5 h5 fw-normal"> 
+                  Team Trees, stylized as <b>#TEAMTREES</b>, is a collaborative fundraiser that raised 20 million U.S. dollars before the start of 2020 to plant 20 million trees. 
+                  The initiative was started by American YouTubers <a class="text-decoration-none fw-bold" href="https://www.youtube.com/@MrBeast" target="_blank">MrBeast</a> and <a class="text-decoration-none fw-bold" href="https://www.youtube.com/@MarkRober" target="_blank">Mark Rober</a>, and was mostly supported by YouTubers. 
+                  All donations go to the <a class="text-decoration-none fw-bold" href="https://www.arborday.org" target="_blank">Arbor Day Foundation</a>, a tree planting organization that pledges to plant one tree for every U.S. dollar donated. 
+                  The <b>Arbor Day Foundation</b> began planting in January 2020 and plans to end "no later than December 2022". 
+                  It is estimated that 23 million trees would take up <b>210 km2</b> of land, absorb around <b>1.6 million tons</b> of carbon and remove <b>116 thousand tons</b> of pollutants from the atmosphere. 
+                  As of 17 March 2023, the project has raised <b>$24,335,381</b>, exceeding the fundraiser's goal to plant 20 million trees. 
+                  As anticipated, more than 20 million trees have been planted.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========= Measures ======== -->
+      
+
+      <!-- ========= Personal Goals ======== -->
+      <div class="carousel-item">
+        <div class="card mb-3">
+          <div class="container-fluid">
+            <h1 class="d-flex justify-content-center text-white fw-bolder mt-5">Personal Goals</h1>
+            <hr class="line w-100">
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-11 col-md-5 col-lg-3">
+              <div class="values card-header text-center">    <!-- Images - https://www.pinterest.com/pin/633387436398077/ -->
+                <h1 class="text-white">Backyard Garden</h1>   <!-- Sources - https://richmondvale.org/blog/backyard-garden/ -->
+                <img class="w-100 mt-5" src="../GRAPHICS/opinion/goals/backyard-garden.jpg" alt="backyard-garden">
+                <h4 class="text-white fw-bolder mt-2">Environmental Benefits:</h4>
+                <p class="text-white h5 fw-light">
+                  Growing your own food reduces the carbon emissions associated with transporting and packaging food. 
+                  It minimizes the energy required for long-distance transportation.
+                </p>
+                <h4 class="text-white fw-bolder">Health Benefits:</h4>
+                <p class="text-white h5 fw-light">
+                  Homegrown produce is typically fresher, more nutritious, and free from chemical residues compared to store-bought options.
+                  Growing your own food provides a level of self-sufficiency, ensuring a consistent supply of fresh produce, even during disruptions in the food system.
+                </p>
+                <h4 class="text-white fw-bolder">Economic Impact:</h4>
+                <p class="text-white h5 fw-light">
+                  Growing your own food can lead to significant cost savings, as seeds and inputs are generally more affordable than buying produce regularly.
+                </p>
+              </div>
+            </div>
+          
+
+            <div class="col-11 col-md-5 col-lg-3">
+              <div class="values card-header text-center">        <!-- Images - https://www.healthhub.sg/programmes/37/nsc -->
+                <h1 class="text-white">Hosting An Eco-Event</h1>  <!-- Sources - https://www.earthreminder.com/how-to-improve-environmental-education/ -->
+                <img class="w-100" src="../GRAPHICS/opinion/goals/Eco-event.jpg" alt="Eco-Event">
+                <h4 class="text-white fw-bolder mt-2">Health Benefits:</h4>
+                <p class="text-white h5 fw-light"> 
+                  An eco event provides an opportunity to educate and raise awareness among attendees about environmental issues, sustainable practices, and the importance of protecting the Earth. 
+                  This increased awareness can inspire individuals to adopt more eco-friendly behaviors in their daily lives.
+                </p>
+                <h4 class="text-white fw-bolder">Showcasing Eco-friendly Technologies:</h4>
+                <p class="text-white h5 fw-light">
+                  An eco event can be an opportunity to showcase and demonstrate innovative, eco-friendly technologies and solutions. 
+                  For example, I want to host an Event similar to the <a class="text-decoration-none fw-bold" href="https://www.healthhub.sg/programmes/37/nsc" target="_blank">National Steps Challenge</a>. 
+                  Where the participants run for rewards while improving their health
+                  However, tweak it where instead of running for health, they run for lower carbon footprint.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-11 col-md-5 col-lg-3">
+              <div class="values card-header text-center">                    <!-- Images - https://www.istockphoto.com/vector/people-supporting-sustainability-and-eco-friendly-solutions-gm1359495077-432823866 -->
+                <h1 class="text-white">Living a sustainable lifestyle</h1>    <!-- Sources - https://www.rd.com/article/sustainable-living/ -->
+                <img class="w-100" src="../GRAPHICS/opinion/goals/sustainable-lifestyle.jpg" alt="sustainable-lifestyle">
+                <h4 class="text-white fw-bolder mt-2">Reduce, reuse, and recycle:</h4>
+                <p class="text-white h5 fw-light">
+                  Minimize waste by reducing your consumption, reusing items whenever possible, and recycling materials such as paper, plastic, glass, and metal.
+                </p>
+                <h4 class="text-white fw-bolder">Conserve energy:</h4>
+                <p class="text-white h5 fw-light">
+                  Turn off lights when not in use, unplug electronics when they're not being used, use energy-efficient appliances and light bulbs, and consider using renewable energy sources like solar power.
+                </p>
+                <h4 class="text-white fw-bolder">Conserve water:</h4>
+                <p class="text-white h5 fw-light">
+                  Be mindful of your water usage by taking shorter showers, fixing leaks promptly, watering plants efficiently, and using water-saving appliances and fixtures.
+                </p>
+                <h4 class="text-white fw-bolder">Opt for eco-friendly products:</h4>
+                <p class="text-white h5 fw-light">
+                  Choose environmentally friendly products such as biodegradable cleaning supplies, natural personal care products, and reusable items like shopping bags, water bottles, and coffee cups.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========= Personal Goals ======== -->
+
+
+      <!-- ========= Readers ======== -->
+      <div class="carousel-item">
+        <div class="card mb-5">
+          <div class="container-fluid">
+            <h1 class="d-flex justify-content-center text-white fw-bolder mt-5">Measures taken now</h1>
+            <hr class="line w-100">
+          </div>
+          <div class="row d-flex justify-content-center align-items-center">
+            <img class="w-75" src="../GRAPHICS/opinion/readers.jpg" alt="readers">        <!-- Images - https://www.rd.com/article/sustainable-living/ -->
+          </div>
+        </div>
+      </div>
+      <!-- ========= Readers ======== -->
+
+
+      <!-- ========= Ozone Layer Table ======== -->
+      <div class="carousel-item">
+        <div class="card mb-5">
+          <div class="container-fluid">
+            <h1 class="d-flex justify-content-center text-white fw-bolder mt-5">Ozone Layer Table</h1>   <!-- Images - https://www.researchgate.net/figure/Environmental-Datasets-Statistics_tbl4_237705467 -->   
+            <hr class="line w-100">
+          </div>
+          <div class="row d-flex justify-content-center align-items-center mt-5">
+            <table class="table w-75 table-dark table-striped">
+              <thead>
+                <tr>
+                  <th rowspan="2">Dataset No.</th>
+                  <th rowspan="2">Station</th>
+                  <th rowspan="2">Year</th>
+                  <th rowspan="2">Instances</th>
+                  <th colspan="2">Ozone Measurements</th>
+                  <th colspan="4">Ozone Quality Indicator</th>
+                </tr>
+                <tr>
+                  <th>Valid</th>
+                  <th>Erroneous</th>
+                  <th>L</th>
+                  <th>M</th>
+                  <th>H</th>
+                  <th>V</th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>GRAU</td>
+                  <td>1999</td>
+                  <td>35040</td>
+                  <td>33390</td>
+                  <td>1659</td>
+                  <td>15931</td>
+                  <td>12366</td>
+                  <td>5405</td>
+                  <td>88</td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">2</th>
+                  <td>GRAU</td>
+                  <td>2000</td>
+                  <td>35136</td>
+                  <td>33699</td>
+                  <td>1437</td>
+                  <td>17878</td>
+                  <td>11109</td>
+                  <td>4830</td>
+                  <td>120</td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">3</th>
+                  <td>GRAU</td>
+                  <td>2001</td>
+                  <td>35040</td>
+                  <td>33187</td>
+                  <td>1853</td>
+                  <td>19971</td>
+                  <td>12294</td>
+                  <td>1742</td>
+                  <td>108</td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">4</th>
+                  <td>MORE</td>
+                  <td>1999</td>
+                  <td>35040</td>
+                  <td>30470</td>
+                  <td>4569</td>
+                  <td>1082</td>
+                  <td>14579</td>
+                  <td>16240</td>
+                  <td>46</td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">5</th>
+                  <td>MORE</td>
+                  <td>2000</td>
+                  <td>35136</td>
+                  <td>31881</td>
+                  <td>3255</td>
+                  <td>2653</td>
+                  <td>15054</td>
+                  <td>16779</td>
+                  <td>43</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">6</th>
+                  <td>MORE</td>
+                  <td>2001</td>
+                  <td>35040</td>
+                  <td>31881</td>
+                  <td>1998</td>
+                  <td>2575</td>
+                  <td>15116</td>
+                  <td>16068</td>
+                  <td>24</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">7</th>
+                  <td>ONDA</td>
+                  <td>1999</td>
+                  <td>35040</td>
+                  <td>34318</td>
+                  <td>722</td>
+                  <td>8626</td>
+                  <td>17279</td>
+                  <td>8851</td>
+                  <td>46</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">8</th>
+                  <td>ONDA</td>
+                  <td>2000</td>
+                  <td>35136</td>
+                  <td>34881</td>
+                  <td>255</td>
+                  <td>9241</td>
+                  <td>17460</td>
+                  <td>8267</td>
+                  <td>21</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">9</th>
+                  <td>ONDA</td>
+                  <td>2001</td>
+                  <td>35040</td>
+                  <td>34475</td>
+                  <td>565</td>
+                  <td>9777</td>
+                  <td>16283</td>
+                  <td>8482</td>
+                  <td>29</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- ========= Ozone Layer Table ======== -->
+    </div>    
+  </main>
+  <!-- ========= Carousel ======== -->
+
+
+  <!-- ========= Footer ======== -->
+  <footer>
+    <h1 class="mt-5 text-white h5 text-center">Contact Me:</h1>
+    <div class="footerContainer">
+        <div class="socialIcons d-flex justify-content-center">
+            <a class="text-decoration-none rounded-circle" href="https://www.facebook.com/profile.php?id=100092359457299"><i class="fa-brands fa-facebook"></i></a>
+            <a class="text-decoration-none rounded-circle" href="https://twitter.com/PinPinMans"><i class="fa-brands fa-twitter"></i></a>
+            <a class="text-decoration-none rounded-circle" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-google-plus"></i></a>
+            <a class="text-decoration-none rounded-circle" href="https://www.youtube.com/channel/UC5QdmAEEMLEyiisdag3qWSw"><i class="fa-brands fa-youtube"></i></a>
+            <a class="text-decoration-none rounded-circle" href="https://www.instagram.com/pinpin.mans/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="footerBottom text-center p-1">
+        <p class="text-white">Copyright ©2023; Designed by<span class="fw-bolder m-2">PinPin</span></p>
+    </div>
+  </footer>
+  <!-- ========= Footer ======== -->
+
+</body>
+</html>
+
+
+
+<!-- Sources - https://www.panamunaproject.com.au/blogs/news/10-reasons-we-should-take-care-of-our-earth -->
+<!-- Sources - https://en.wikipedia.org/wiki/Team_Seas -->
+<!-- Sources - https://en.wikipedia.org/wiki/Team_Trees -->
+<!-- Sources - https://richmondvale.org/blog/backyard-garden/ -->
+<!-- Sources - https://www.earthreminder.com/how-to-improve-environmental-education/ -->
+<!-- Sources - https://www.rd.com/article/sustainable-living/ -->
+<!-- Sources - https://www.researchgate.net/figure/Environmental-Datasets-Statistics_tbl4_237705467 -->
+

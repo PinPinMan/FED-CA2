@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Earth | Game</title>
+    <link rel="stylesheet" href="../CSS/main.reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/main.layout.css">
+    <link rel="stylesheet" href="../CSS/game.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script defer src="../JS/main.js"></script>
+    <script defer src="../JS/game.js"></script>
+  </head>
+<body>
+    <!-- ========= UpBtn ======== -->
+    <button onclick="topFunction()" class="position-fixed z-3 border-0" id="myBtn" title="Go to top"><i class='fas'>&#xf35b;</i></button>
+    <!-- ========= UpBtn ======== -->
+
+
+    <!-- ========= NavBar ======== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bolder" style="font-size:3vw;" href="../index.html"><img src="../GRAPHICS/pfp.jpg" alt="Logo" style="width:5vw;" class="rounded-pill m-3">PinPin's CA2 Project</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbar2Label"><img src="../GRAPHICS/pfp.jpg" alt="Logo" style="width:40px;" class="rounded-pill"></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item px-2 fw-bolder">
+                <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item px-2 fw-bolder">
+                <a class="nav-link" href="opinion.html">Opinion</a>
+                </li>
+                <li class="nav-item px-2 fw-bolder">
+                    <a class="nav-link" href="sp.html">SP</a>
+                </li>
+                <li class="nav-item px-2 fw-bolder">
+                    <a class="nav-link active" aria-current="page" href="#">Game</a>
+                </li>
+                <li class="nav-item px-2 ">
+                    <a onclick="wrapperAddPopup()" class="btn btn-outline-light fw-bolder" id="btnFeedback-popup">Feedback</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- ========= NavBar ======== -->
+
+
+    <!-- ========= FeedBack ======== -->
+    <div class="wrapper text-white position-fixed bg-transparent d-flex align-items-center justify-content-center z-3 overflow-hidden">
+        <!-- close icon -->
+        <span onclick="wrapperRemovePopup()" id="icon-close" class="position-absolute top-0 bg-dark text-white d-flex align-items-center justify-content-center z-1">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <!-- login -->
+        <div class="w-100 form-box login">
+            <h2 class="text-center text-dark">Login</h2>
+            <form action="#">
+                <div class="input-box w-100">
+                    <span class="icon position-absolute text-dark"><ion-icon name="mail"></ion-icon></span>
+                    <input class="w-100 bg-transparent fw-bolder text-dark border-0" type="email" required>
+                    <label class="fw-bolder text-dark">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon position-absolute text-dark"><ion-icon name="person"></ion-icon></span>
+                    <input class="w-100 bg-transparent fw-bolder text-dark border-0" type="tel" pattern="[0-9]{8}" required>
+                    <label class="fw-bolder text-dark">Mobile number</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon position-absolute text-dark"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input class="w-100 bg-transparent fw-bolder text-dark border-0" type="password" required>
+                    <label class="fw-bolder text-dark">Password</label>
+                </div>
+                <button class="btn btn-primary w-100" type="submit">Login</button>
+                <div class="pledge text-center text-dark fw-bold">
+                    <p>
+                        Do you want to <a href="#" class="return text-center text-dark fw-bolder">make a pledge</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <!-- login -->
+
+        <!-- pledging -->
+        <div class="w-100 form-box pledging">
+            <h2 class="text-center text-dark">Pledge</h2>
+            <!-- Q1 -->
+            <form>
+                <label class="text-dark fw-bolder pb-2">1.Are you pledging as:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios">
+                    <label class="form-check-label text-dark">
+                        An indivvidual
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios">
+                    <label class="form-check-label text-dark">
+                        An educational institution
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios">
+                    <label class="form-check-label text-dark">
+                        A corporate entity / organisation
+                    </label>
+                </div>
+            </form>
+            <!-- Q1 -->
+
+            <!-- Q2 -->
+            <form>
+                <label class="text-dark pt-3 pb-2 fw-bolder">2.How did you find out about the Green Nation Pledge?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios">
+                    <label class="form-check-label text-dark">
+                        Form social media (Facebook, Instagram, Tiktok, LinkedIn etc)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios">
+                    <label class="form-check-label text-dark">
+                        From online advertisement
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios">
+                    <label class="form-check-label text-dark">
+                        From ads on lift lobby digital noticeboards
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios">
+                    <label class="form-check-label text-dark">
+                        At an event that featured Green Nation Pledge
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios">
+                    <label class="form-check-label text-dark">
+                        Others
+                    </label>
+                    <textarea class="form-control bg-transparent text-white" rows="1"></textarea>
+                </div>
+            </form>
+            <!-- Q2 -->
+
+            <button onclick="wrapperRemovePopup()" class="btn btn-success w-100 mt-2" type="submit">Make a Pledge</button>
+            <div class="pledge text-center text-dark fw-bold">
+                <p>
+                    <a href="#" class="makePledge text-center text-light fw-bolder">Return</a>
+                </p>
+            </div>
+        </div>
+        <!-- pledging -->
+    </div>
+    <!-- ========= FeedBack ======== -->
+
+
+    <!-- ========= Intro-text ======== -->
+    <section class="position-relative d-flex justify-content-center align-items-center">
+        <h1 class="text-white position-absolute" id="centerText">Welcome</h1>
+        <img class="w-100" src="../GRAPHICS/background_img/background4.jpg" alt="background image">
+        <h2 class="position-absolute text-white" id="quote">It's not a bug, it's an undocumented feature.</h2>
+        <h2 class="position-absolute text-white" id="person">-pinpin</h2>
+    </section>
+    <!-- ========= Intro-text ======== -->
+
+
+    <!-- ========= Game ======== -->
+    <main>
+        <h2 class="d-flex justify-content-center text-white">The Thirsty Green Snake</h2>
+        <p class="d-flex justify-content-center text-white text-center">
+            Help the snake has severe DEHYDRATION due to climate change!
+        </p>
+        <p class="d-flex justify-content-center text-white text-center">
+            Use <span class="fw-bolder mx-2">"WASD"</span> on the keyboard to maneuver the snake around.
+        </p>
+        <div class="d-flex justify-content-center">
+            <a onclick="start()" class="bg-success rounded-pill text-center text-white m-3 text-decoration-none p-3" id="startButton">Start</a>
+        </div>
+        <canvas class="border border-warning border-1" id="board"></canvas>
+    </main>
+    <!-- ========= Game ======== -->
+
+
+    <!-- ========= Footer ======== -->
+    <footer>
+        <h1 class="mt-5 text-white h5 text-center">Contact Me:</h1>
+        <div class="footerContainer">
+            <div class="socialIcons d-flex justify-content-center">
+                <a class="text-decoration-none rounded-circle" href="https://www.facebook.com/profile.php?id=100092359457299"><i class="fa-brands fa-facebook"></i></a>
+                <a class="text-decoration-none rounded-circle" href="https://twitter.com/PinPinMans"><i class="fa-brands fa-twitter"></i></a>
+                <a class="text-decoration-none rounded-circle" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-google-plus"></i></a>
+                <a class="text-decoration-none rounded-circle" href="https://www.youtube.com/channel/UC5QdmAEEMLEyiisdag3qWSw"><i class="fa-brands fa-youtube"></i></a>
+                <a class="text-decoration-none rounded-circle" href="https://www.instagram.com/pinpin.mans/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footerBottom text-center p-1">
+            <p class="text-white">Copyright ©2023; Designed by<span class="fw-bolder m-2">PinPin</span></p>
+        </div>
+    </footer>
+    <!-- ========= Footer ======== -->
+</body>
+</html>

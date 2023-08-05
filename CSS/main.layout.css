@@ -1,0 +1,139 @@
+html {
+    scroll-behavior: smooth;
+}
+#centerText{
+    font-size: 5vw;
+    top:45%;
+    text-shadow: 2px 2px 4px rgba(0,0,0);
+}
+#quote{
+    font-size: 2.5vw;
+    bottom: 10%;
+}
+#person{
+    font-size: 2vw;
+    bottom: 5%;
+}
+
+.pledge p,
+#LoginBtn{
+    font-size: 1vw;
+}
+
+#PledgeBtn,
+.pledging{
+    font-size: 1vw;
+}
+
+/* ======== WRAPPER ======= */
+.wrapper{
+    width: 55vw;
+    height: 35em;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    top: 25%;
+    right: 23vw;
+    backdrop-filter: blur(20px);
+    transition: transform 0.5s ease, height 0.2s ease;
+    transform: scale(0);
+}
+.wrapper.active-popup{
+    transform: scale(1);
+}
+.wrapper .form-box{
+    padding: 5vw;
+}
+/* swapping from login to pledging */
+.wrapper .form-box.login{
+    transform: translateX(0);
+}
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-100em);
+}
+.wrapper .form-box.pledging{
+    position: absolute;
+    transform: translateX(100em);
+    transition: none;
+}
+.wrapper.active .form-box.pledging{
+    transition: none;
+    transform: translateX(0);
+}
+/* swapping from login to pledging */
+.wrapper #icon-close{
+    right: 0;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 0 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+.form-box h2{
+    font-size: 2em;
+}
+.input-box{
+    margin-bottom: 1em;
+    position: relative;
+    height: 4.5vw;
+    border-bottom: 0.2em solid black; /* line below input */
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0.3em;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -0.1em;
+}
+.input-box input{
+    height: 100%;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+    right: 0.5em;
+    font-size: 1.2em;
+    line-height: 3.5vw;
+}
+.pledge{
+    font-size: 0.9em;
+    margin: 25px 0 10px;
+}
+.pledge p a{
+    text-decoration: none;
+}
+.pledge p a:hover{
+    text-decoration: underline;
+}
+/* ======== WRAPPER ======= */
+
+/* ======== FOOTER ======= */
+
+.socialIcons a{
+    padding: 10px;
+    background-color: white;
+    opacity: 0.8;
+    margin: 10px;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+.footerBottom{
+    background-color: rgba(7, 7, 100, 0.7);
+} 
+/* ======== FOOTER ======= */
